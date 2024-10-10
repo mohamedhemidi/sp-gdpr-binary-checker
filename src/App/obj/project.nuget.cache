@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "g1zq9crijlJZDU/i6MuvEGc96YQ5zojz5xCX+hiNZEuzcRPuYD1+9pGu+tK5LJfxvLP61leS26JNA6NoRCBjKg==",
+  "success": true,
+  "projectFilePath": "/Users/Darko/Developer/DEV/ASSESSMENTS/SecurePrivacy/sp-gdpr-binary-checker/src/App/App.csproj",
+  "expectedPackageFiles": [
+    "/Users/Darko/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "/Users/Darko/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/Users/Darko/.nuget/packages/swashbuckle.aspnetcore/6.4.0/swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
+    "/Users/Darko/.nuget/packages/swashbuckle.aspnetcore.swagger/6.4.0/swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
+    "/Users/Darko/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.4.0/swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
+    "/Users/Darko/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.4.0/swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512"
+  ],
+  "logs": []
+}
