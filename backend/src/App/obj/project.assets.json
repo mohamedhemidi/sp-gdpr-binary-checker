@@ -2327,6 +2327,27 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+      "Entries/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.AspNetCore": "2.2.0",
+          "Microsoft.Extensions.Configuration": "8.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.1",
+          "Microsoft.Extensions.Options.ConfigurationExtensions": "8.0.0",
+          "MongoDB.Bson": "2.29.0",
+          "MongoDB.Driver": "2.29.0"
+        },
+        "compile": {
+          "bin/placeholder/Entries.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Entries.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Modules.Users.Application/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -5422,6 +5443,11 @@
       "path": "../Common/Common.csproj",
       "msbuildProject": "../Common/Common.csproj"
     },
+    "Entries/1.0.0": {
+      "type": "project",
+      "path": "../Modules/Entries/Entries.csproj",
+      "msbuildProject": "../Modules/Entries/Entries.csproj"
+    },
     "Modules.Users.Application/1.0.0": {
       "type": "project",
       "path": "../Modules/Users/Modules.Users.Application/Modules.Users.Application.csproj",
@@ -5446,6 +5472,7 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "Common >= 1.0.0",
+      "Entries >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 8.0.5",
       "Modules.Users.Endpoints >= 1.0.0"
     ]
@@ -5477,6 +5504,9 @@
           "projectReferences": {
             "/Users/Darko/Developer/DEV/ASSESSMENTS/SecurePrivacy/sp-gdpr-binary-checker/backend/src/Common/Common.csproj": {
               "projectPath": "/Users/Darko/Developer/DEV/ASSESSMENTS/SecurePrivacy/sp-gdpr-binary-checker/backend/src/Common/Common.csproj"
+            },
+            "/Users/Darko/Developer/DEV/ASSESSMENTS/SecurePrivacy/sp-gdpr-binary-checker/backend/src/Modules/Entries/Entries.csproj": {
+              "projectPath": "/Users/Darko/Developer/DEV/ASSESSMENTS/SecurePrivacy/sp-gdpr-binary-checker/backend/src/Modules/Entries/Entries.csproj"
             },
             "/Users/Darko/Developer/DEV/ASSESSMENTS/SecurePrivacy/sp-gdpr-binary-checker/backend/src/Modules/Users/Modules.Users.Endpoints/Modules.Users.Endpoints.csproj": {
               "projectPath": "/Users/Darko/Developer/DEV/ASSESSMENTS/SecurePrivacy/sp-gdpr-binary-checker/backend/src/Modules/Users/Modules.Users.Endpoints/Modules.Users.Endpoints.csproj"

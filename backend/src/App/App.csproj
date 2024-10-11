@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Modules\Users\Modules.Users.Endpoints\Modules.Users.Endpoints.csproj" />
+    <ProjectReference Include="..\Modules\Entries\Entries.csproj" />
 
 
     <ProjectReference Include="..\Common\Common.csproj" />

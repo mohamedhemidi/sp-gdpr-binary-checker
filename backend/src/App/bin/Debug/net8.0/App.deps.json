@@ -9,6 +9,7 @@
       "App/1.0.0": {
         "dependencies": {
           "Common": "1.0.0",
+          "Entries": "1.0.0",
           "Microsoft.EntityFrameworkCore.Design": "8.0.5",
           "Modules.Users.Endpoints": "1.0.0"
         },
@@ -1189,6 +1190,19 @@
           "Common.dll": {}
         }
       },
+      "Entries/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore": "2.2.0",
+          "Microsoft.Extensions.Configuration": "8.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.1",
+          "Microsoft.Extensions.Options.ConfigurationExtensions": "8.0.0",
+          "MongoDB.Bson": "2.29.0",
+          "MongoDB.Driver": "2.29.0"
+        },
+        "runtime": {
+          "Entries.dll": {}
+        }
+      },
       "Modules.Users.Application/1.0.0": {
         "dependencies": {
           "Common": "1.0.0",
@@ -2100,6 +2114,11 @@
       "hashPath": "zstdsharp.port.0.7.3.nupkg.sha512"
     },
     "Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Entries/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

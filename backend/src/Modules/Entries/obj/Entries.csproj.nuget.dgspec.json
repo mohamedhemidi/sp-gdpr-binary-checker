@@ -1,0 +1,95 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/Darko/Developer/DEV/ASSESSMENTS/SecurePrivacy/sp-gdpr-binary-checker/backend/src/Modules/Entries/Entries.csproj": {}
+  },
+  "projects": {
+    "/Users/Darko/Developer/DEV/ASSESSMENTS/SecurePrivacy/sp-gdpr-binary-checker/backend/src/Modules/Entries/Entries.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/Darko/Developer/DEV/ASSESSMENTS/SecurePrivacy/sp-gdpr-binary-checker/backend/src/Modules/Entries/Entries.csproj",
+        "projectName": "Entries",
+        "projectPath": "/Users/Darko/Developer/DEV/ASSESSMENTS/SecurePrivacy/sp-gdpr-binary-checker/backend/src/Modules/Entries/Entries.csproj",
+        "packagesPath": "/Users/Darko/.nuget/packages/",
+        "outputPath": "/Users/Darko/Developer/DEV/ASSESSMENTS/SecurePrivacy/sp-gdpr-binary-checker/backend/src/Modules/Entries/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/Darko/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
+            "Microsoft.Extensions.Options.ConfigurationExtensions": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "MongoDB.Bson": {
+              "target": "Package",
+              "version": "[2.29.0, )"
+            },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.29.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.203/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

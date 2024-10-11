@@ -1,6 +1,6 @@
 using Modules.Users.Endpoints;
 using Common;
-
+using Entries;
 namespace App
 {
     public class Startup
@@ -16,7 +16,7 @@ namespace App
 
             services.AddSharedFramework(_configuration);
             services.AddUsersModule(_configuration);
-
+            services.AddEntriesModule(_configuration);
             services.AddControllers().AddJsonOptions(options =>
             {
                 // Prevent Object keys PascalCase formatting
@@ -36,6 +36,7 @@ namespace App
 
             app.UseSharedFramework();
             app.UseUsersModule();
+            app.UseEntriesModule();
 
             app.UseCors(options =>
             {
