@@ -1,5 +1,8 @@
 using Common.Exceptions;
 using Entries.DTOs;
+
+namespace Entries.Services;
+
 public class BinaryCheckerService : IBinaryChecker
 {
 
