@@ -10,7 +10,9 @@ namespace Entries.Entities
         public string? UserId { get; set; }
         [BsonElement("string"), BsonRepresentation(MongoDB.Bson.BsonType.String)]
         public string? String { get; set; }
-        [BsonElement("good"), BsonRepresentation(MongoDB.Bson.BsonType.String)]
+        [BsonElement("good"), BsonRepresentation(MongoDB.Bson.BsonType.Boolean)]
         public bool? Good { get; set; }
+        [BsonElement("checked_date"), BsonRepresentation(MongoDB.Bson.BsonType.DateTime)]
+        public DateTime CheckedDate { get; set; }
     }
 }

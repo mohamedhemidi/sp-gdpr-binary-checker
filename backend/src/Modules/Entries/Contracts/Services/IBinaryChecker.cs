@@ -1,4 +1,6 @@
+using Entries.DTOs;
+
 public interface IBinaryChecker
 {
-    bool ValidateBinaryString(string input);
+    BinaryCheckResponseDTO ValidateBinaryString(string input);
 }

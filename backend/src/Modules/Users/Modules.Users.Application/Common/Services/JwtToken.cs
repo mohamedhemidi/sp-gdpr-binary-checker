@@ -26,6 +26,7 @@ namespace Modules.Users.Application.Common.Services
             {
                 new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
                 new Claim(JwtRegisteredClaimNames.Email, user.Email!),
+                new Claim(JwtRegisteredClaimNames.Name, user.FullName!),
             };
 
 

@@ -33,7 +33,7 @@ namespace Entries.Controllers
         public async Task<IActionResult> GetAllEntries()
         {
             var filter = Builders<Entry>.Filter.Eq(x => x.UserId, currentUser);
-            var entriesList = await _entry.Find(filter).ToListAsync();
+            var entriesList = await _entry.Find(filter).SortByDescending(x => x.CheckedDate).ToListAsync();
             var response = new ApiResponse<List<Entry>>
             {
                 IsSuccess = true,
@@ -56,28 +56,57 @@ namespace Entries.Controllers
 
             var validation = _service.ValidateBinaryString(input);
 
-            if (validation)
+            var newEntry = new Entry();
+            newEntry.String = input;
+            newEntry.UserId = currentUser;
+            newEntry.CheckedDate = DateTime.Now;
+            newEntry.Good = validation.valid ? true : false;
+
+            try
             {
 
-                var newEntry = new Entry
-                {
-                    String = input,
-                    UserId = currentUser,
-                    Good = true
-                };
                 await _entry.InsertOneAsync(newEntry);
+                if (validation.valid)
+                {
+
+                    var response = new ApiResponse<bool>
+                    {
+                        IsSuccess = true,
+                        Message = "Valide string",
+                        StackTrace = null,
+                        Response = true,
+                        StatusCode = 200,
+                    };
+                    return Ok(response);
+                }
+                else
+                {
+                    var response = new ApiResponse<bool>
+                    {
+                        IsSuccess = false,
+                        Message = validation.error,
+                        StackTrace = null,
+                        Response = false,
+                        StatusCode = 400,
+                    };
+                    return BadRequest(response);
+                }
+
+            }
+            catch (MongoWriteException mwx)
+            {
+
+                return BadRequest(mwx);
+
+            }
+            catch (System.Exception)
+            {
+
+                return Problem();
+
             }
 
 
-            var response = new ApiResponse<bool>
-            {
-                IsSuccess = true,
-                Message = "Valide String",
-                StackTrace = null,
-                Response = validation,
-                StatusCode = 200,
-            };
-            return Ok(response);
         }
     }
 }
