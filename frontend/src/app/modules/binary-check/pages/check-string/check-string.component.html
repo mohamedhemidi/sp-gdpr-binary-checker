@@ -1,0 +1,33 @@
+<header class="header">
+  <h1 class="header-title">Check Entry</h1>
+</header>
+<section class="section">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label class="form-label">Binary String</label>
+      <input
+        formControlName="binary_string"
+        type="text"
+        class="form-control"
+        placeholder="Binary String"
+        required
+      />
+
+      @if (
+        form.controls["binary_string"].errors &&
+        form.controls["binary_string"].touched
+      ) {
+        <div class="text-danger">Binary String is required.</div>
+      }
+    </div>
+
+    <div class="form-group">
+      <button class="btn btn-success">Check</button>
+    </div>
+  </form>
+  @if (error) {
+    <div class="error-container">
+      <p>{{ error }}</p>
+    </div>
+  }
+</section>

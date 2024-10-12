@@ -1,0 +1,43 @@
+.navbar-container {
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    gap: 1rem;
+    padding: 1rem;
+    align-items: center;
+    margin-bottom: 3rem;
+    p{
+        margin: 0;
+    }
+}
+.disabled {
+    display: none;
+}
+.logout-btn {
+    display: flex;
+    text-decoration: none;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    img {
+        width: 1.2rem;
+        height: 1.2rem;
+    } 
+}
+
+.avatar {
+    background-color: #564ED1;
+    color: #FFF;
+    padding: 0.6rem;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

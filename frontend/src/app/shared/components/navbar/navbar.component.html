@@ -1,0 +1,12 @@
+<div class="navbar-container" [ngClass]="disableNavbar ? 'disabled' : ''">
+  @if (authService.getUserDetails()) {
+    <a class="logout-btn" (click)="logout()"
+      >Logout
+      <img src="assets/icons/logout.svg" />
+    </a>
+    <p>{{ authService.getUserDetails()?.fullname }}</p>
+    <span class="avatar">{{
+      authService.getUserDetails()?.fullname![0].toUpperCase()
+    }}</span>
+  }
+</div>

@@ -1,0 +1,13 @@
+<div class="card-wrapper">
+  <div class="card-content">
+    <div class="binary-string">{{ binaryString }}</div>
+    <div class="checked-date">
+      {{ moment(checkedDate).fromNow() }}
+    </div>
+    @if (good) {
+      <img class="success-status" src="assets/icons/check.svg" />
+    } @else {
+      <img class="error-status" src="assets/icons/error.svg" />
+    }
+  </div>
+</div>

@@ -1,0 +1,90 @@
+<div class="signup-container">
+  <div class="signup-form">
+    <h2>Signup</h2>
+    @if (signupSuccess) {
+      <div class="signup-success">
+        <h5>
+          You are signed up successfully! please proceed to login
+          <a routerLink="/auth/login">Login</a>
+        </h5>
+      </div>
+    }
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          formControlName="Email"
+          type="email"
+          id="Email"
+          name="Email"
+          required
+        />
+        @if (form.controls["Email"].errors && form.controls["Email"].touched) {
+          <div class="text-danger">Email is required.</div>
+        }
+      </div>
+      <div class="form-group">
+        <label for="FullName">Full Name</label>
+        <input
+          formControlName="FullName"
+          type="text"
+          id="FullName"
+          name="FullName"
+          required
+        />
+        @if (
+          form.controls["FullName"].errors && form.controls["FullName"].touched
+        ) {
+          <div class="text-danger">Email is required.</div>
+        }
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          formControlName="Password"
+          type="password"
+          id="password"
+          name="password"
+          required
+        />
+        @if (
+          form.controls["Password"].errors && form.controls["Password"].touched
+        ) {
+          <div class="text-danger">Password is required.</div>
+        }
+      </div>
+
+      <div class="form-group">
+        <label for="password">Confirm Password</label>
+        <input
+          formControlName="ConfirmPassword"
+          type="password"
+          id="password"
+          name="ConfirmPassword"
+          required
+        />
+        @if (
+          form.controls["ConfirmPassword"].errors &&
+          form.controls["ConfirmPassword"].touched
+        ) {
+          <div class="text-danger">Password is required.</div>
+        }
+      </div>
+      <button type="submit" class="signup-button">Signup</button>
+    </form>
+    <div class="error-container">
+      {{ error }}
+    </div>
+
+    <p class="login-text">
+      Already have an account ? <a routerLink="/auth/login">Login here</a>
+    </p>
+    @if (validationErrors && validationErrors.length) {
+      <div class="validation-errors">
+        @for (errMsg of validationErrors; track $index) {
+          <p>{{ errMsg.ErrorMessage }}</p>
+        }
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="entries-list-wrapper">
+  @if (entriesList$ | async; as entries) {
+    @if (entries.Response) {
+      @for (entry of entries.Response; track $index) {
+        <app-entry-card
+          [binaryString]="entry.String"
+          [checkedDate]="entry.CheckedDate"
+          [good]="entry.Good"
+        ></app-entry-card>
+      }
+    } @else {
+      <h1>No entries found...</h1>
+    }
+  }
+</div>
