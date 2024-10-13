@@ -1,0 +1,43 @@
+<div class="landing-page">
+  <nav class="navbar">
+    <div class="logo">BinaryCoins</div>
+    <ul class="nav-links">
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/auth/login">Login</a></li>
+      <li><a routerLink="/auth/signup">Signup</a></li>
+      <li><a routerLink="/privacy">Privacy</a></li>
+      <li><a routerLink="/terms">Terms</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1>Welcome to Binary Coin</h1>
+      <p>
+        We provide a code checking tool. So you can check and store your tokens
+        safely
+      </p>
+      <div class="user-consent">
+        <a
+          [ngClass]="{ disabled: !isChecked }"
+          (click)="onClick($event)"
+          class="cta-button"
+          routerLink="/tool/check"
+          [attr.aria-disabled]="!isChecked"
+          >Get Started</a
+        >
+        <div class="consent-checkbox">
+          <input
+            type="checkbox"
+            id="consent"
+            (change)="onConsentChange($event)"
+          />
+          <label for="consent"
+            >I agree to the <a routerLink="/terms">terms</a> of the tool usage,
+            as well as the storage and processing of my personal data</label
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

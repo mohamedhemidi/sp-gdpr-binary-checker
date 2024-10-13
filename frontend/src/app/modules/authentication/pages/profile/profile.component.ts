@@ -25,6 +25,10 @@ export class ProfileComponent implements OnInit {
     this.profileInfo.name = this.authService.getUserDetails()
       ?.fullname as string;
     this.profileInfo.id = this.authService.getUserDetails()?.id as string;
+
+    if (!this.authService.isLoggedIn()) {
+      this.router.navigateByUrl('/auth/login');
+    }
   }
 
   onDeleteAccount() {

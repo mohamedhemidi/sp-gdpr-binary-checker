@@ -2,9 +2,19 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { authGuard } from './modules/authentication/guards/auth.guard';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { HomepageComponent } from './pages/homepage/homepage.component';
+import { PrivacyComponent } from './pages/privacy/privacy.component';
+import { TermsComponent } from './pages/terms/terms.component';
 
 const routes: Routes = [
-  { path: '', component: DashboardComponent, canActivate: [authGuard] },
+  { path: '', component: HomepageComponent },
+  { path: 'privacy', component: PrivacyComponent },
+  { path: 'terms', component: TermsComponent },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [authGuard],
+  },
   {
     path: 'auth',
     loadChildren: () =>
@@ -20,7 +30,7 @@ const routes: Routes = [
         (m) => m.BinaryCheckModule,
       ),
   },
-  { path: '**', component: DashboardComponent, canActivate: [authGuard] },
+  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({

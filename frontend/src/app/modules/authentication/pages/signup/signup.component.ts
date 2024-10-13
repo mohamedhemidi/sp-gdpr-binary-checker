@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.scss',
 })
-export class SignupComponent {
+export class SignupComponent implements OnInit {
   form: FormGroup;
   usersService = inject(AuthService);
   loginFormSubscription!: Subscription;
@@ -30,6 +30,11 @@ export class SignupComponent {
       Password: [null, [Validators.required]],
       ConfirmPassword: [null, Validators.required],
     });
+  }
+  ngOnInit(): void {
+    if (this.usersService.isLoggedIn()) {
+      this.router.navigateByUrl('/dashboard');
+    }
   }
 
   ngOnDestroy(): void {

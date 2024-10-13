@@ -31,6 +31,9 @@ export class LoginComponent implements OnInit {
     });
   }
   ngOnInit(): void {
+    if (this.usersService.isLoggedIn()) {
+      this.router.navigateByUrl('/dashboard');
+    }
     this.activatedRoute.queryParams.subscribe((params) => {
       const signedup = params['signedup'];
       if (signedup == true)

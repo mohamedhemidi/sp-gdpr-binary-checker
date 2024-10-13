@@ -27,7 +27,13 @@ export class AppComponent {
   ngOnInit(): void {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        if (event.url.includes('/login') || event.url.includes('/signup')) {
+        if (
+          event.url.includes('/login') ||
+          event.url.includes('/signup') ||
+          this.router.url === '/' ||
+          this.router.url === '/terms' ||
+          this.router.url === '/privacy'
+        ) {
           this.disableSidebar = true;
         } else {
           this.disableSidebar = false;

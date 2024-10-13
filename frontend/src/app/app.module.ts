@@ -11,6 +11,9 @@ import { SidebarComponent } from './shared/components/sidebar/sidebar.component'
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { accessTokenInterceptor } from './modules/authentication/interceptors/access-token.interceptor';
 import { BinaryCheckModule } from './modules/binary-check/binary-check.module';
+import { HomepageComponent } from './pages/homepage/homepage.component';
+import { PrivacyComponent } from './pages/privacy/privacy.component';
+import { TermsComponent } from './pages/terms/terms.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +21,9 @@ import { BinaryCheckModule } from './modules/binary-check/binary-check.module';
     SidebarComponent,
     DashboardComponent,
     NavbarComponent,
+    HomepageComponent,
+    PrivacyComponent,
+    TermsComponent,
   ],
   imports: [
     BrowserModule,

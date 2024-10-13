@@ -1,12 +1,12 @@
-import { Component, inject, Input, OnInit } from "@angular/core";
-import { AuthService } from "../../../modules/authentication/services/auth.service";
-import { Router } from "@angular/router";
-import { IUserDetails } from "../../../modules/authentication/types/userDetails";
+import { Component, inject, Input, OnInit } from '@angular/core';
+import { AuthService } from '../../../modules/authentication/services/auth.service';
+import { Router } from '@angular/router';
+import { IUserDetails } from '../../../modules/authentication/types/userDetails';
 
 @Component({
-  selector: "app-navbar",
-  templateUrl: "./navbar.component.html",
-  styleUrl: "./navbar.component.scss",
+  selector: 'app-navbar',
+  templateUrl: './navbar.component.html',
+  styleUrl: './navbar.component.scss',
 })
 export class NavbarComponent {
   authService = inject(AuthService);
@@ -25,6 +25,6 @@ export class NavbarComponent {
 
   logout() {
     this.authService.logout();
-    this.router.navigate(["/auth/login"]);
+    this.router.navigate(['/']);
   }
 }

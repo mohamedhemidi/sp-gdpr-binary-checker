@@ -38,7 +38,13 @@ export class BodyComponent implements OnInit {
   ngOnInit(): void {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        if (event.url.includes('/login') || event.url.includes('/signup')) {
+        if (
+          event.url.includes('/login') ||
+          event.url.includes('/signup') ||
+          this.router.url === '/' ||
+          this.router.url === '/terms' ||
+          this.router.url === '/privacy'
+        ) {
           this.disableNavbar = true;
         } else {
           this.disableNavbar = false;
