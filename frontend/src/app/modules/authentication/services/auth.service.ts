@@ -38,6 +38,10 @@ export class AuthService {
     localStorage.removeItem(this.authTokensKey);
   };
 
+  deleteAccount = () => {
+    return this.http.get(env.DeleteAccount);
+  };
+
   getUserDetails = (): IUserDetails | null => {
     const token = this.getAuthTokens();
     if (!token) return null;

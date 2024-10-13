@@ -1,5 +1,5 @@
 export interface IEntry {
-  id: string;
+  Id: string;
   String: string;
   Good: boolean;
   CheckedDate: string;
@@ -7,4 +7,7 @@ export interface IEntry {
 
 export interface IEntryRequest {
   BinaryString: string;
+}
+export interface IEntryDeleteRequest {
+  Id: string;
 }

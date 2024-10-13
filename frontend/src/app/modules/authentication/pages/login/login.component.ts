@@ -35,8 +35,6 @@ export class LoginComponent implements OnInit {
       const signedup = params['signedup'];
       if (signedup == true)
         this.signupRedirectMessage = 'Successfully signed up!';
-
-      console.log('===== SIGNED UP RESULT =====', signedup);
     });
   }
 

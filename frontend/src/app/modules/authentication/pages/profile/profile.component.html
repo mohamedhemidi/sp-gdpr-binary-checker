@@ -1,0 +1,23 @@
+<header class="header">
+  <h1 class="header-title">My Profile</h1>
+</header>
+<section class="section">
+  <div class="info-item">
+    <h3>Id</h3>
+    <h4>{{ profileInfo.id }}</h4>
+  </div>
+  <div class="info-item">
+    <h3>Email</h3>
+    <h4>{{ profileInfo.email }}</h4>
+  </div>
+  <div class="info-item">
+    <h3>Full Name</h3>
+    <h4>{{ profileInfo.name }}</h4>
+  </div>
+  <button class="delete-button" (click)="onDeleteAccount()">
+    Delete my account
+  </button>
+  <p class="delete-note">
+    All your entries records will be removed from our database
+  </p>
+</section>

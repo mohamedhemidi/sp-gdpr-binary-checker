@@ -1,5 +1,6 @@
 <div class="navbar-container" [ngClass]="disableNavbar ? 'disabled' : ''">
   @if (authService.getUserDetails()) {
+    <a routerLink="/auth/profile">My Profile</a>
     <a class="logout-btn" (click)="logout()"
       >Logout
       <img src="assets/icons/logout.svg" />

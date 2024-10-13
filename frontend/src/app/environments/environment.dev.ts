@@ -14,8 +14,10 @@ export const env = {
   //Authenticaion:
   Login: `${API_ENDPOINT}/api/auth/login`,
   Signup: `${API_ENDPOINT}/api/auth/register`,
+  DeleteAccount: `${API_ENDPOINT}/api/auth/account/delete`,
 
   // Check Tool:
   CheckEntry: `${API_ENDPOINT}/api/entries/check`,
   GetAllEntries: `${API_ENDPOINT}/api/entries`,
+  DeleteEntry: `${API_ENDPOINT}/api/entries/delete`,
 };

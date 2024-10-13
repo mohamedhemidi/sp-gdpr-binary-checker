@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IResponse } from '../../../shared/types/IResponse';
-import { IEntry, IEntryRequest } from '../types/entries';
+import { IEntry, IEntryDeleteRequest, IEntryRequest } from '../types/entries';
 import { env } from '../../../environments/environment.dev';
 import { Observable } from 'rxjs';
 
@@ -16,5 +16,9 @@ export class EntriesService {
   };
   checkEntry = (data: IEntryRequest): Observable<IResponse<boolean | null>> => {
     return this.http.post<IResponse<boolean | null>>(env.CheckEntry, data);
+  };
+
+  deleteEntry = (data: IEntryDeleteRequest): Observable<IResponse<boolean>> => {
+    return this.http.post<IResponse<boolean>>(env.DeleteEntry, data);
   };
 }

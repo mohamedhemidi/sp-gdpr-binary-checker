@@ -1,6 +1,8 @@
 using Modules.Users.Endpoints;
 using Common;
 using Entries;
+using Entries.ExternalEvents;
+using System.Reflection;
 namespace App
 {
     public class Startup
@@ -17,6 +19,9 @@ namespace App
             services.AddSharedFramework(_configuration);
             services.AddUsersModule(_configuration);
             services.AddEntriesModule(_configuration);
+            services.AddMassTransitService(_configuration,
+                Assembly.GetAssembly(typeof(DeleteEntriesConsumer))!
+            );
             services.AddControllers().AddJsonOptions(options =>
             {
                 // Prevent Object keys PascalCase formatting

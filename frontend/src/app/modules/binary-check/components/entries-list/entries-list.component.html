@@ -1,15 +1,20 @@
 <div class="entries-list-wrapper">
   @if (entriesList$ | async; as entries) {
-    @if (entries.Response) {
+    @if (entries.Response && entries.Response.length > 0) {
       @for (entry of entries.Response; track $index) {
         <app-entry-card
           [binaryString]="entry.String"
           [checkedDate]="entry.CheckedDate"
           [good]="entry.Good"
+          [entryId]="entry.Id"
+          (deleteEntry)="onDelete($event)"
         ></app-entry-card>
       }
     } @else {
-      <h1>No entries found...</h1>
+      <h3>
+        No previous checks entries found... you can create with
+        <a routerLink="/tool/check">Checker Tool</a>
+      </h3>
     }
   }
 </div>

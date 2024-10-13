@@ -2,6 +2,7 @@
 
 using System.Reflection;
 using Common.Middlewares;
+using MassTransit;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,6 +21,20 @@ namespace Common
         {
             app.UseMiddleware<ExceptionMiddleware>();
             return app;
+        }
+
+        public static IServiceCollection AddMassTransitService(this IServiceCollection services, IConfiguration config, params Assembly[] assemblies)
+        {
+            services.AddMassTransit(busConfigurator =>
+            {
+                busConfigurator.AddConsumers(assemblies);
+                busConfigurator.SetKebabCaseEndpointNameFormatter();
+                busConfigurator.UsingInMemory((context, config) =>
+                {
+                    config.ConfigureEndpoints(context);
+                });
+            });
+            return services;
         }
 
     }

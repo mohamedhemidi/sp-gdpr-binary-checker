@@ -19,4 +19,19 @@ export class EntriesListComponent implements OnInit {
   getEntriesList() {
     this.entriesList$ = this.entriesService.getEntries();
   }
+
+  onDelete(entryId: string) {
+    this.entriesService
+      .deleteEntry({
+        Id: entryId,
+      })
+      .subscribe({
+        next: (response) => {
+          this.getEntriesList();
+        },
+        error: (err) => {
+          console.log(err);
+        },
+      });
+  }
 }

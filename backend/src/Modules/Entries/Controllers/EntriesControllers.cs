@@ -108,5 +108,24 @@ namespace Entries.Controllers
 
 
         }
+        [HttpPost]
+        [Route("delete")]
+        public async Task<IActionResult> DeleteEntry([FromBody] DeleteEntryRequestDTO request)
+        {
+
+            var filter = Builders<Entry>.Filter.Eq(x => x.Id, request.Id);
+
+            var entry = await _entry.Find(filter).FirstOrDefaultAsync();
+            if (entry == null)
+            {
+                return NotFound("Entry does not exist");
+            }
+            if (entry!.UserId != currentUser)
+            {
+                return Unauthorized("Unauthorized action");
+            }
+            await _entry.DeleteOneAsync(filter);
+            return Ok(request);
+        }
     }
 }
