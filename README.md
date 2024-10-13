@@ -4,6 +4,8 @@ A small web application as a part of assessment to show code skills in action.
 
 ### preview:
 
+![image](./frontend/preview.png)
+
 ### Running & Demonstration :
 
 #### Using Docker :

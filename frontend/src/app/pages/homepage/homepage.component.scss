@@ -2,6 +2,12 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+}
+
+.navbar-container {
+  padding: 1rem;
 }
 
 .navbar {
@@ -11,6 +17,7 @@
   padding: 1rem 2rem;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
 }
 
 .navbar .logo {
@@ -43,20 +50,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f4f4f4;
   text-align: center;
   padding: 0 2rem;
 }
 
 .hero-content h1 {
   font-size: 2.5rem;
-  color: #333;
+  color: #FFF;
 }
 
 .hero-content p {
   font-size: 1.2rem;
   margin: 1rem 0;
-  color: #555;
+  color: #FFF;
 }
 
 .cta-button {
@@ -89,6 +95,8 @@
   background: #FFF;
   padding: 1rem;
   height: 10rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.8)
 }
 
 .consent-checkbox {
